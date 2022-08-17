@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import Backdrop from './Backdrop';
-import Modal from './Modal';
+import { useState } from "react";
+import Backdrop from "./Backdrop";
+import Modal from "./Modal";
 
 function Todo(props) {
   const [modalAberto, setModalAberto] = useState(false);
@@ -10,17 +10,26 @@ function Todo(props) {
   }
 
   function fecharModal() {
-    setModalAberto(false)
+    setModalAberto(false);
+  }
+
+  function confirmarDelete() {
+    console.log("Confirmado");
+    setModalAberto(false);
   }
 
   return (
     <div className="card">
       <h2>{props.text}</h2>
       <div className="actions">
-        <button className="btn" onClick={deletar}>Deletar</button>
+        <button className="btn" onClick={deletar}>
+          Deletar
+        </button>
       </div>
-      { modalAberto ? <Backdrop onCancel={fecharModal} /> : null }
-      { modalAberto ? <Modal /> : null }
+      {modalAberto ? <Backdrop onCancel={fecharModal} /> : null}
+      {modalAberto ? (
+        <Modal onConfirm={confirmarDelete} onCancel={fecharModal} />
+      ) : null}
     </div>
   );
 }
