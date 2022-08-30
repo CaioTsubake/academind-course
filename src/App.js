@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import MenuNavegacao from "./components/layout/MenuNavegacao";
 import FavoritosPagina from "./pages/Favoritos";
 import NovoMeetupPagina from "./pages/NovoMeetup";
 import TodosMeetupsPagina from "./pages/TodosMeetups";
@@ -6,6 +7,8 @@ import TodosMeetupsPagina from "./pages/TodosMeetups";
 function App() {
   return (
     <div>
+      <MenuNavegacao />
+
       <Switch>
         <Route path={"/"} exact>
           <TodosMeetupsPagina />
