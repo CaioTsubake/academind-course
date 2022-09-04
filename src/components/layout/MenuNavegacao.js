@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+import classes from './MenuNavegacao.module.css'
+
 function MenuNavegacao() {
   return (
-    <header>
-      <div>Meetups de React</div>
+    <header className={classes.header}>
+      <div className={classes.logo}>Meetups de React</div>
       <nav>
         <ul>
           <li>
