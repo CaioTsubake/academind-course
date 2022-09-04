@@ -26,7 +26,7 @@ function TodosMeetupsPagina() {
     <section>
       <h1>Todos os Meetups</h1>
         <ul>
-          <ListaMeetups />
+          <ListaMeetups meetups={DUMMY_DATA}/>
         </ul>
     </section>
   );
